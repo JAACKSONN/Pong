@@ -98,14 +98,20 @@ while True:
     if ball.ycor() < -285:
         ball.sety(-285)
         ball.dy *= -1
-    #left check
+    #right check
     if ball.xcor() > 390:
         ball.goto(0,0)
         ball.dx *= -1
-    #right check
+        score_a += 1
+        pen.clear()
+        pen.write("Player A: {} Player B: {}".format(score_a, score_b), align="center", font = ("Courier", 24, "normal"))
+    #left check
     if ball.xcor() < -390:
         ball.goto(0, 0)
         ball.dx *= -1
+        score_b += 1
+        pen.clear()
+        pen.write("Player A: {} Player B: {}".format(score_a, score_b), align="center", font = ("Courier", 24, "normal"))
 
     #paddle1 collision
     if(ball.xcor() < -340 and ball.xcor() > -350 and (ball.ycor() < paddle_1.ycor() + 50 and ball.ycor() > paddle_1.ycor() - 50)):
