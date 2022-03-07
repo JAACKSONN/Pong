@@ -32,6 +32,15 @@ ball.color("white")
 ball.penup()
 ball.goto(0, 0) #chooses the start coordinate
 
+#Moves paddle up
+def paddle_1_up():
+    y = paddle_1.ycor() #from turtle, find y coordinate
+    y += 20
+    paddle_1.sety(y)
+
+win.listen() #listens for keyboard input
+win.onkeypress(paddle_1_up, "w") #if they press w, we move up
+
 # Main game loop
 while True:
     win.update()
