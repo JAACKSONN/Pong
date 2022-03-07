@@ -6,6 +6,20 @@ win.bgcolor("black")
 win.setup(width = 800, height = 600)
 win.tracer(0) #stops the window from updating
 
+
+#Pen for scoring
+pen = turtle.Turtle()
+pen.speed(0)
+pen.color("white")
+pen.penup() #so that there is not a line moving
+pen.hideturtle() #just want to see the text that it writes
+pen.goto(0,260)
+pen.write("Player A: 0 Player B: 0", align="center", font = ("Courier", 24, "normal"))
+
+#Score
+score_a = 0
+score_b = 0
+
 # Create paddle 1
 paddle_1 = turtle.Turtle()
 paddle_1.speed(0) #speed of animation, sets it to maximum possible speed
